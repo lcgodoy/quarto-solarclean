@@ -13,5 +13,5 @@ with the theme.
 
 To try it out, it suffices to run:
 ```
-quarto use lcgodoy/talk-template
+quarto use lcgodoy/quarto-solarclean
 ```
