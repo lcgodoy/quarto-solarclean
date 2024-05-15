@@ -1,0 +1,24 @@
+---
+title: |
+  My awesome talk
+author:
+  - name: 
+    orcid: optional
+    affiliations: Department of ??
+date: 2099-04-10
+bibliography: references.bib
+csl: asa.csl
+---
+
+## Math
+
+Write some math:
+$$y = x^2$$
+
+> Test some stuff out.
+
+## Highlighting
+
+Something [important]{.important} and another [important stuff]{.important2}.
+Also, uses `bibtex` for citations [@r2023r].
+

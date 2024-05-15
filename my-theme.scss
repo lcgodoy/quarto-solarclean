@@ -1,0 +1,285 @@
+/*-- scss:defaults --*/
+/* This file is based on the sollarized theme from revealjs and the clean
+   (https://github.com/grantmcdermott/quarto-revealjs-clean) revealjs theme
+*/
+
+//--- colors ----
+
+// * Some options:
+
+// ** Analogous Harmony
+$dark_brown: #443731;
+$dark_brown2: #392E29;
+$muted_teal: #52796f;
+$muted_teal2: #466361;
+$olive_green: #77795C;
+$olive_green2: #676A55;
+$warm_bred: #894338;
+$warm_bred2: #703931;
+$terracota: #BA6254;
+$terracota2: #A55044;
+
+// ** Complementary Harmony
+$muted_indigo: #515677;
+$muted_indigo2: #444861;
+$dusty_violet: #7A6879;
+$dusty_violet2: #635764;
+$cool_pink: #C1979C;
+$cool_pink2: #B0898F;
+$pale_coral: #EC9C96;
+$pale_coral2: #E38982;
+
+$earthy_brown: #5D493A;
+
+// ** Contrast colors
+// *** Bold and modern
+$deep_blue: #1D3557;
+$vibrant_orange: #E66101;
+
+$vibrant_blue: #268bd2;
+$vibrant_pink: #d33682;
+
+// *** Subtle and Earthy
+$sage_green: #708D81;
+$dusty_rose: #C68686;
+
+$solarized_bg: #fdf6e3;
+$solarized_body: #657b83;
+
+// $secondary_bg: $earthy_brown;
+// $secondary_body: #FFFFFF;
+$secondary_bg: $solarized_body;
+$secondary_body: $solarized_bg;
+
+// Colors used in the presentation
+$body-bg: $solarized_bg !default;
+$body-color: $solarized_body !default;
+// $link-color: #5BA1D2 !default;
+$link-color: $vibrant_blue !default;
+$selection-bg: $vibrant_pink !default;
+
+$contrast: $vibrant_pink;
+$contrast2: $vibrant_blue;
+
+// * aux for clean theme stuff
+$jet: $dark_brown;
+$accent: $warm_bred;
+$accent2: $olive_green;
+
+$right-arrow: "\2192"; // Unicode character for right arrow
+
+// my fonts
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Slab:wght@100..900&display=swap');
+
+$presentation-heading-font: "Roboto Slab", serif !default;
+$font-family-sans-serif: "Lato", sans-serif !default;
+
+$presentation-heading-color: #586e75 !default;
+$presentation-heading-text-transform: uppercase !default;
+$presentation-font-size-root: 35px;
+
+// code blocks
+$code-block-border-color: #93a1a1 !default;
+
+/*-- scss:rules --*/
+
+html * {
+    color-profile: sRGB;
+    rendering-intent: auto;
+}
+
+.reveal a {
+  line-height: 1.5em;
+}
+
+// ** highlighting
+.important {
+    color: $contrast;
+    font-weight: bolder;
+}
+
+
+.important2 {
+    color: $contrast2;
+    font-weight: bolder;
+}
+
+.section_slide {
+    background-color: $secondary_bg !important; 
+    color: $secondary_body;
+}
+
+.section_slide h1 {
+    color: $secondary_body;
+}
+
+
+// centering slides vertically
+
+.xycenter {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+}
+
+// paragraphs
+
+.reveal p {
+  font-weight: 350;
+  font-weight: regular;
+  margin-top: 1.25em;
+}
+
+// title and headings
+
+#title-slide {
+  text-align: left;
+
+  .title {
+    color: $body-color;
+    font-size: 1.4em;
+    // font-weight: 350;
+    font-weight: bolder;
+  }
+
+  .subtitle {
+    color: $accent;
+    font-style: italic;
+    margin-top: 0em;
+    font-weight: lighter;
+  }
+
+  .institute,
+  .quarto-title-affiliation,
+  .quarto-title-author-email {
+    font-style: italic;
+    // font-size: 80%;
+    // color: #7F7F7F;
+  }
+
+  .author,
+  .quarto-title-author-name {
+    color: $body-color;
+  }
+
+  .quarto-title-authors {
+    display: flex;
+    justify-content: left;
+
+    .quarto-title-author {
+      padding-left: 0em;
+      padding-right: 0em;
+      width: 100%;
+    }
+  }
+
+}
+// lists
+
+// Unordered lists
+
+.reveal ul {
+  // font-weight: 300;
+  font-weight: normal;
+  padding-left: 16px;
+  // li::marker {
+  //   color: mix($accent, white, 70%);
+  // }
+}
+
+.reveal ul ul {
+  font-weight: lighter;
+  // li::marker {
+  //   color: mix($accent, white, 60%);
+  // }
+}
+
+// Ordered lists
+
+.reveal ol {
+  // font-weight: 300;
+  font-weight: normal;
+  padding-left: 16px;
+  // li::marker {
+  //   color: mix($accent, white, 70%);
+  // }
+}
+
+// Beamer-style button link environment
+
+// .button {
+//   display: inline-block;
+//   padding: 6px 12px;
+//   margin-bottom: 0;
+//   font-size: 14px;
+//   font-weight: 400;
+//   line-height: 1.42857143;
+//   text-align: center;
+//   white-space: nowrap;
+//   vertical-align: middle;
+//   cursor: pointer;
+//   background-color: $accent;
+//   border: 1px solid $accent;
+//   color: #fff !important;
+//   text-decoration: none;
+//   border-radius: 4px;
+//   transition: all 0.2s ease-in-out;
+// }
+
+// .button:hover {
+//   background-color: #0056b3;
+//   border-color: #0056b3;
+// }
+
+// .button::before {
+//   content: "▶";
+//   margin-right: 5px;
+// }
+
+.reveal table {
+  // height: auto; /* Adjust table width to fit content up to the available slide space */
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 0.8em;
+}
+
+.reveal table th,
+.reveal table td {
+  border: none; /* Remove internal row lines */
+  padding: .23em; /* Adjust padding as needed */
+  text-align: left; /* Adjust text alignment as needed */
+  font-weight: normal; /* Lighter font weight for main table text */
+}
+
+/* Adds a bottom border to the table header row for distinction */
+.reveal table thead th,
+.reveal .slides table tr:last-child td,
+.reveal .slides table {
+  border-bottom: 2px solid #D3D3D3; /* Dark grey color for the bottom border */
+}
+
+/* Make column headers bold */
+.reveal table thead th {
+  font-weight: bold;
+}
+
+/* Styling table captions */
+.reveal table caption {
+  // color: #666666; /* Dark grey color for the caption */
+  font-variant: small-caps; /* Use small caps for the caption text */
+}
+
+.fw table {
+    width: 100%;
+}
+
+// Special catch for etable environment to ensure these table images
+// don't overflow the slide.
+// See: 
+.table-striped {
+    > tbody > tr:nth-of-type(odd) > * {
+        background-color: #657b830D;
+    }
+}
